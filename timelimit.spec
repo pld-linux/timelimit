@@ -19,7 +19,9 @@ shutdown.
 
 %build
 %{__make} \
-	CFLAGS="%{rpmcflags} -pipe -DHAVE_ERR -DHAVE_SYSEXITS_H -DHAVE_ERRNO_H -DHAVE_SIGACTION"
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} %{rpmcppflags} -pipe -DHAVE_ERR -DHAVE_SYSEXITS_H -DHAVE_ERRNO_H -DHAVE_SIGACTION" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
