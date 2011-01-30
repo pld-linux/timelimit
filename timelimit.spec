@@ -1,11 +1,11 @@
 Summary:	Limit a process's absolute execution time
 Name:		timelimit
-Version:	1.5
-Release:	3
+Version:	1.7
+Release:	1
 License:	distributable
 Group:		Base
 Source0:	http://devel.ringlet.net/sysutils/timelimit/%{name}-%{version}.tar.gz
-# Source0-md5:	e9d3da9a81479689a59c58a93914b034
+# Source0-md5:	333e969e67ed376c5a9bc891ac866d1f
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +35,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc NEWS
 %attr(755,root,root) %{_bindir}/%{name}
 %{_mandir}/man1/%{name}*
