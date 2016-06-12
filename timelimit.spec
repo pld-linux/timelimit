@@ -1,11 +1,11 @@
 Summary:	Limit a process's absolute execution time
 Name:		timelimit
-Version:	1.8
+Version:	1.8.1
 Release:	1
 License:	distributable
 Group:		Base
-Source0:	http://devel.ringlet.net/sysutils/timelimit/%{name}-%{version}.tar.gz
-# Source0-md5:	ad106fc69c8cea5b440f94f42271bfcc
+Source0:	http://devel.ringlet.net/files/sys/timelimit/%{name}-%{version}.tar.xz
+# Source0-md5:	b8d0bcc67b970ce0fe1fce65e2901fbd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
