@@ -7,6 +7,8 @@ License:	distributable
 Group:		Base
 Source0:	http://devel.ringlet.net/files/sys/timelimit/%{name}-%{version}.tar.xz
 # Source0-md5:	247ecc3333b3e3b7704112921e6b7600
+# for prove binary
+%{?with_tests:BuildRequires:	perl-tools-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
