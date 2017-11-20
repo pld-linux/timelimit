@@ -1,11 +1,12 @@
+%bcond_without	tests
 Summary:	Limit a process's absolute execution time
 Name:		timelimit
-Version:	1.8.1
+Version:	1.8.2
 Release:	1
 License:	distributable
 Group:		Base
 Source0:	http://devel.ringlet.net/files/sys/timelimit/%{name}-%{version}.tar.xz
-# Source0-md5:	b8d0bcc67b970ce0fe1fce65e2901fbd
+# Source0-md5:	247ecc3333b3e3b7704112921e6b7600
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,12 +24,19 @@ shutdown.
 	CFLAGS="%{rpmcflags} %{rpmcppflags} -pipe -DHAVE_ERR -DHAVE_SYSEXITS_H -DHAVE_ERRNO_H -DHAVE_SIGACTION" \
 	LDFLAGS="%{rpmldflags}"
 
+%{?with_tests:%{__make} check}
+
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install %{name} $RPM_BUILD_ROOT%{_bindir}
-install %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	BINDIR=%{_bindir} \
+	MANDIR=%{_mandir}/man \
+	BINOWN=$(id -u) \
+	BINGRP=$(id -g) \
+	SHAREOWN=$(id -u) \
+	SHAREGRP=$(id -g)
 
 %clean
 rm -rf $RPM_BUILD_ROOT
