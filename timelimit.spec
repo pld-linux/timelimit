@@ -1,12 +1,12 @@
 %bcond_without	tests
 Summary:	Limit a process's absolute execution time
 Name:		timelimit
-Version:	1.8.2
+Version:	1.9.0
 Release:	1
 License:	distributable
 Group:		Base
 Source0:	http://devel.ringlet.net/files/sys/timelimit/%{name}-%{version}.tar.xz
-# Source0-md5:	247ecc3333b3e3b7704112921e6b7600
+# Source0-md5:	9414dbc57206ccf8155f128ac46d2ebd
 # for prove binary
 %{?with_tests:BuildRequires:	perl-tools-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
