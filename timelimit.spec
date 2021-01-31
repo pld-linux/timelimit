@@ -23,7 +23,7 @@ shutdown.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} %{rpmcppflags} -pipe -DHAVE_ERR -DHAVE_SYSEXITS_H -DHAVE_ERRNO_H -DHAVE_SIGACTION" \
+	CFLAGS="%{rpmcflags} %{rpmcppflags}" \
 	LDFLAGS="%{rpmldflags}"
 
 %{?with_tests:%{__make} check}
